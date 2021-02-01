@@ -48,14 +48,13 @@ function jumpingOnClouds($c,$n) {
 // Complete the jumpingOnClouds function below.
 function jumpingOnClouds($c,$n) {
     $jump = 0;
-    for($i = 0; $i<$n; $i++ ) {
-        if(($i+2) < $n && $c[$i+2] == 0) {
-            $jump++;
-            $i++;
-            $i = ($i+2) < $n ? $i+2 : $i++;
-        } else {
-            $jump++;            
-        }
+    for($i = 0; $i<$n; $i++) {
+            if(($i+2) < $n && $c[$i+2] == 0) {
+                $jump++;
+                $i++;
+            } elseif(($i+1) < $n && $c[$i+1] == 0) {
+                $jump++;
+            }
     }
     
     return $jump;
